@@ -1,0 +1,69 @@
+:root{
+  --bg:#0b0f1a;
+  --bg-elev:#121826;
+  --text:#e6e8ef;
+  --muted:#a9b1c6;
+  --accent:#f4c20d; /* RntCo yellow */
+  --brand:#ffd75a;
+  --border:#1f2838;
+  --primary:#f4c20d;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif}
+img{max-width:100%;display:block}
+a{color:var(--text);text-decoration:none}
+h1,h2,h3{line-height:1.2;margin:0 0 .5rem}
+p{margin:.5rem 0 1rem}
+
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(11,15,26,.8);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
+.brand{font-weight:800;letter-spacing:.3px;color:#fff}
+.menu{display:flex;gap:14px;align-items:center}
+.menu a{opacity:.9}
+.btn{display:inline-block;padding:.7rem 1rem;border-radius:10px;border:1px solid transparent;transition:.2s ease;cursor:pointer}
+.btn-primary{background:var(--primary);color:#111;font-weight:700}
+.btn-outline{border-color:var(--border);background:transparent}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--muted)}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.3rem}
+
+.hero{padding:80px 20px 40px;max-width:1100px;margin:0 auto;text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900}
+.accent{color:var(--accent)}
+.lead{max-width:800px;margin:12px auto 20px;color:var(--muted);font-size:1.05rem}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.why{max-width:1100px;margin:40px auto;padding:20px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:linear-gradient(180deg,var(--bg-elev),#0c1322);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.card .icon{font-size:1.6rem;margin-bottom:8px;filter:saturate(120%)}
+
+.split{max-width:1100px;margin:20px auto;padding:20px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.steps{max-width:900px;margin:10px auto 30px;padding:0 20px}
+.steps ol{margin:0;padding-left:18px}
+.steps li{margin:10px 0;color:var(--muted)}
+
+.landlords{max-width:900px;margin:30px auto;padding:24px 20px;background:linear-gradient(180deg,var(--bg-elev),#0c1322);border:1px solid var(--border);border-radius:16px;text-align:center}
+.landlords p{color:var(--muted)}
+
+.faq{max-width:900px;margin:30px auto;padding:0 20px}
+.faq details{background:var(--bg-elev);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{color:var(--muted);margin-top:8px}
+
+.contact{max-width:900px;margin:30px auto;padding:20px;text-align:center}
+.contact p{color:var(--muted)}
+.contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.footer{margin-top:40px;border-top:1px solid var(--border);padding:22px 20px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.footer .links{display:flex;gap:12px}
+
+@media (max-width: 960px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+}
+@media (max-width: 560px){
+  .menu{display:none;position:absolute;top:56px;right:12px;background:var(--bg-elev);border:1px solid var(--border);border-radius:12px;padding:12px;flex-direction:column;min-width:220px}
+  .burger{display:inline}
+}
